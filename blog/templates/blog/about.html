@@ -1,0 +1,85 @@
+{% extends 'blog/base.html' %}
+{% block title %}About{% endblock title %}
+
+
+{% load static %}
+
+{% block content %}
+
+<section id="showcase-inner" class="py-3 text-black">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-3">About Djanblog<img style="width: 60px; height:60px; margin:4px"
+                        src="https://iconape.com/wp-content/files/eu/43441/svg/blogger.svg" alt="Djanblog Logo">
+                </h1>
+                <big>
+                    <p class="lead">We Give the Best Posts of 2021!</p>
+                </big>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+
+<section id="about" class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>WHY DO WE BLOG?</h2>
+                <p class="lead">Simply to share our passion and to educate each other by sharing our experience
+                    regardless of age, gender, color, and ethnicity.</p>
+                <img src="{% static 'images/blog.jpeg' %}" alt="About Image Page" width="430" height="320">
+                <p class="mt-4">When you have a passion for something, you want to share it with the world. Whether it
+                    is a passion for science, tech, health, fitness, or marketing, blogging is an excellent way to share
+                    that passion. When you blog about something you are passionate about, it opens the door to connect
+                    with like-minded individuals around the world who share the same passion.</p>
+
+                <p class="mt-4">If you are someone who loves teaching, blogging can be a platform for teaching people
+                    who have an interest in your areas of expertise. By blogging, you will not only teach others, but
+                    you will also improve your understanding more about the topic. You will be constantly learning as
+                    you will always be looking for more things to teach your readers. </p>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/constantin.jpeg' %}"
+                        alt="Best Post Blogger of the month" width="70" height="280">
+                    <div class="card-body">
+                        <h5 class="card-title">Post Blogger Of The Month</h5>
+                        <h6 class="text-secondary">Constantin Délia</h6>
+                        <p class="card-text">Constantin Délia Rose is a 27-year-old intern at a law firm who enjoys
+                            donating blood, swimming and social card games. He is friendly and brave, but can also be
+                            greedy and a bit untidy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+
+
+<section id="team" class="py-5 text-center">
+    <div class="container text-center">
+        <h2 class="text-center">Founder</h2>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <img src="{% static 'images/Nessim.jpg' %}" alt="Nessim Profile Pic" width="400" height="250"
+                    class="rounded-circle z-depth-2">
+                <h4>Nessim Azoulay</h4>
+                <h5 class="text-success">
+                    <i class="fa fa-award text-success"></i> Creator of Djanblog/Post Blogger
+                </h5>
+                <p>
+                    <a href="tel:052-8027226"><i class="fa fa-phone"></i> 052-8027226
+                    </a>
+                </p>
+                <p>
+                    <a href="mailto: ness.azoulay.ta@gmail.com"><i class="fa fa-envelope-open"></i>
+                        ness.azoulay.ta@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>{% endblock content %}

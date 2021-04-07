@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% block title %}Categories List{% endblock title %}
+
+{% block content %}
+
+
+<h1 style="text-align: center;">Djanblog Categories</h1>
+<div class="col-12">
+    <div class="content-section text-center">
+        {% for item in cat_menu_list %}
+        <ul class="list-group">
+            <h4>
+                <li class="list-group-item list-group-item-bold"><i class="fa fa-list-alt" aria-hidden="true">
+                        <a class="dropdown-item" href="{% url 'category' item %}">{{item}}</a></i>
+                    <a class="btn btn-outline-danger" href="{% url 'category-delete' item.id %}">Delete</a>
+                </li>
+            </h4>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

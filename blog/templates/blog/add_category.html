@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block title %}Create A New Blog Category!{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1>Add Category</h1>
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">New Blog Topics</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Add Category</button>
+            <a class="btn btn-outline-secondary" href="{% url 'home' %}">Cancel</a>
+
+        </div>
+    </form>
+</div>
+{% endblock content %}

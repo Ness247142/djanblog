@@ -1,0 +1,57 @@
+#header {
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.726);
+    color: white;
+}
+
+h1 {
+    color: darkorange;
+}
+
+a:link {
+    color: darkorange;
+}
+
+#branding h1 {
+    color: white;
+}
+
+a:link, a:visited {
+    color: darkorange;
+}
+
+div.breadcrumbs {
+    background: rgba(0, 0, 0, 0.726);
+    color: white;
+}
+
+div.breadcrumbs a {
+    color: white;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background: rgba(0, 0, 0, 0.726);
+    color: white;
+    height: 20px;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #10287e;
+    color: white;
+    border-radius: 14px;
+}
+
+.button:hover, input[type=submit]:hover, input[type=button]:hover, input[type=button]:hover, .submit-row input:hover, a.button:hover {
+    background: #30caa0;
+    color: #333;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    background: #30caa0;
+    color: #333;
+}
+
+.button.default:hover, input[type=submit].default:hover, .submit-row input.default:hover {
+    background: #10287e;
+    color: #fff;
+}

@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+{% block title %}New Blog Post{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+{% if user.is_authenticated %}
+<h1>Add Post</h1>
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">New Blog Post</legend>
+            {{ form.media }}
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Post</button>
+            <a class="btn btn-outline-secondary" href="{% url 'home' %}">Cancel</a>
+        </div>
+    </form>
+</div><br>
+
+{% else %}
+You Are Not Allowed Here!
+
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% block title %}Category{% endblock title %}
+{% block content %}
+
+{% if category_posts %}
+
+<h1>{{cats}}</h1>
+{% for post in category_posts %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+            <small class="text-muted">Posted on {{ post.date_posted|date:"F d, Y" }}</small>
+        </div>
+        <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+    </div>
+</article>
+
+{% endfor %}
+
+{% else %}
+<h2>Sorry, there is no post related to this category</h2>
+
+{% endif %}
+<a class="btn btn-outline-secondary" href="{% url 'home' %}">Home</a><br><br>
+
+
+{% endblock content %}
