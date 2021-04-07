@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+{% block title %}Edit Profile Page{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% if user.is_authenticated %}
+{% if user.id == profile.user.id %}
+
+<h1 style="text-align: center;">Edit Profile</h1>
+<div class="form-group">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4"> Djanblog User Details</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Update</button>
+            <button class="btn btn-outline-secondary" href="{% url 'home' %}">Cancel</a>
+        </div>
+    </form>
+</div><br>
+
+{% else %}
+
+You're not allowed here!
+
+{% endif %}
+
+{% endif %}
+
+
+
+{% endblock content %}

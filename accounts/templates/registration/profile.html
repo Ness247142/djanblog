@@ -1,0 +1,43 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block title%} Profile {%endblock%}
+{% block content %}
+
+
+<h1 style="text-align: center;">User Profile</h1>
+
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-muted">
+                {% if user.profile.linkedin_url %}
+                <a href="{{ user.profile.linkedin_url }}">Linkedin</a> |
+                {% endif %}
+
+                {% if user.profile.facebook_url %}
+                <a href="{{ user.profile.facebook_url }}">Facebook</a> |
+                {% endif %}
+
+                {% if user.profile.twitter_url %}
+                <a href="{{ user.profile.twitter_url }}">Twitter</a> |
+                {% endif %}
+
+                {% if user.profile.instagram_url %}
+                <a href="{{ user.profile.instagram_url }}">Instagram</a> |
+                {% endif %}
+
+                {% if user.profile.pinterest_url %}
+                <a href="{{ user.profile.pinterest_url }}">Pinterest</a>
+                {% endif %}
+            </p>
+
+            <p class="text-secondary font-weight-light">{{ user.email }}</p>
+
+            <p class="text-secondary font-weight-bold">{{ user.profile.bio }}</p>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

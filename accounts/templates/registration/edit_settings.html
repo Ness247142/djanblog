@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block title%} Edit Settings {%endblock%}
+{% block content %}
+
+
+{% if user.is_authenticated %}
+
+<h1 style="text-align: center;">Edit Settings</h1>
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        <legend class="border-bottom mb-4"> Djanblog User Settings</legend>
+        {{ form | crispy }}
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Update</button>
+            <button class="btn btn-outline-secondary" href="{% url 'home' %}">Cancel</a>
+        </div>
+    </form>
+</div><br>
+
+{% else %}
+
+You're not allowed here!
+
+{% endif %}
+
+{% endblock content %}
