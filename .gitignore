@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 django_blog/secret.py
+django_blog/urls.py
